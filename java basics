@@ -1,0 +1,92 @@
+In Java, data types specify the size and type of values that can be stored in variables. Java is a statically-typed language, meaning that variables must be declared with a data type before they can be used. Data types in Java are broadly categorized into two types: **Primitive Data Types** and **Reference/Object Data Types**.
+
+### 1. **Primitive Data Types**
+
+Primitive data types are the most basic data types available in Java. They are predefined by the language and named by a keyword. There are 8 primitive data types in Java:
+
+-
+
+
+#### Examples of Primitive Data Types:
+
+- **byte:**
+  - Size: 1 byte (8 bits)
+  - Range: -128 to 127
+  - Example:
+    ```java
+    byte myByte = 100;
+    ```
+
+- **short:**
+  - Size: 2 bytes (16 bits)
+  - Range: -32,768 to 32,767
+  - Example:
+    ```java
+    short myShort = 10000;
+    ```
+
+- **int:**
+  - Size: 4 bytes (32 bits)
+  - Range: -2^31 to 2^31-1
+  - Example:
+    ```java
+    int myInt = 100000;
+    ```
+
+- **long:**
+  - Size: 8 bytes (64 bits)
+  - Range: -2^63 to 2^63-1
+  - Example:
+    ```java
+    long myLong = 100000L;
+    ```
+
+- **float:**
+  - Size: 4 bytes (32 bits)
+  - Range: Approximately ±3.40282347E+38F (6-7 significant decimal digits)
+  - Example:
+    ```java
+    float myFloat = 10.5f;
+    ```
+
+- **double:**
+  - Size: 8 bytes (64 bits)
+  - Range: Approximately ±1.79769313486231570E+308 (15 significant decimal digits)
+  - Example:
+    ```java
+    double myDouble = 10.5;
+    ```
+
+- **char:**
+  - Size: 2 bytes (16 bits)
+  - Range: 0 to 65,535 (unsigned)
+  - Example:
+    ```java
+    char myChar = 'A';
+    ```
+
+- **boolean:**
+  - Size: Depends on the JVM (typically 1 bit is used)
+  - Values: `true` or `false`
+  - Example:
+    ```java
+    boolean myBoolean = true;
+    ```
+
+### 2. **Reference/Object Data Types**
+
+Reference data types are not predefined like primitive types. They are created using class definitions. These include classes, arrays, and interfaces. Reference variables are used to store the memory address of an object.
+
+#### Examples of Reference Data Types:
+
+- **String:**
+  - Example:
+    ```java
+    String myString = "Hello, World!";
+    ```
+
+- 
+### **Summary**
+- **Primitive Data Types**: Directly hold the values. Examples include `int`, `char`, `float`, etc.
+- **Reference Data Types**: Hold references (addresses) to objects. Examples include `String`, arrays, classes, and interfaces.
+

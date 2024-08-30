@@ -1,0 +1,33 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class Interface {
+   public Interface() {
+   }
+
+   public static void main(String[] var0) {
+      String[] var1 = new String[]{"Dharneesh", "Ketan", "Prem", "Bala", "Charen", "Dinesh", "Harshi"};
+      Scanner var2 = new Scanner(System.in);
+      System.out.print("Enter a name to search: ");
+      String var3 = var2.nextLine();
+      boolean var4 = false;
+      String[] var5 = var1;
+      int var6 = var1.length;
+
+      for(int var7 = 0; var7 < var6; ++var7) {
+         String var8 = var5[var7];
+         if (var8.equalsIgnoreCase(var3)) {
+            var4 = true;
+            break;
+         }
+      }
+
+      if (var4) {
+         System.out.println(var3 + " is found in the array.");
+      } else {
+         System.out.println(var3 + " is not found in the array.");
+      }
+
+      var2.close();
+   }
+}
