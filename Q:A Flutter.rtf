@@ -1,0 +1,432 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh13200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Here are some common Flutter interview questions along with brief answers to help you prepare:\
+\
+
+\f1\b 1. What is Flutter?\
+
+\f0\b0 \
+
+\f1\b Answer:
+\f0\b0  \
+\
+Flutter is an open-source UI 
+\f1\b software development kit (SDK)
+\f0\b0  created by Google for building natively compiled applications for 
+\f1\b mobile, web, and desktop
+\f0\b0  from a single codebase.\
+\
+ It uses the 
+\f1\b Dart programming language
+\f0\b0  and provides a rich set of 
+\f1\b pre-designed widgets
+\f0\b0 .\
+\
+
+\f1\b 2. What is the difference between `StatelessWidget` and `StatefulWidget`?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+
+\f1\b StatelessWidget:
+\f0\b0 Used for UI components that do not change over time. Once built, they remain static.\
+\
+
+\f1\b StatefulWidget
+\f0\b0 :Used for UI components that can change dynamically, i.e., the state can change during the app's lifecycle. It has a mutable state managed by the `State` class.\
+\
+
+\f1\b 3. Explain the Flutter widget lifecycle.\
+
+\f0\b0 \
+
+\f1\b Answer:
+\f0\b0   \
+\
+
+\f1\b For Stateful Widget :\
+
+\f0\b0 \
+
+\f1\b createState()
+\f0\b0 : Called when the widget is inserted into the widget tree.\
+
+\f1\b initState():
+\f0\b0  Called once when the state is created.\
+
+\f1\b didChangeDependencies():
+\f0\b0  Called when the widget\'92s dependencies change.\
+
+\f1\b build(): 
+\f0\b0 Called whenever the widget needs to be rendered.\
+
+\f1\b setState():
+\f0\b0  Triggers a rebuild of the widget with updated state.\
+
+\f1\b deactivate():
+\f0\b0  Called when the widget is removed from the widget tree temporarily.\
+
+\f1\b dispose(): 
+\f0\b0 Called when the widget is permanently removed from the widget tree.\
+\
+
+\f1\b 4. How do you manage state in Flutter?\
+
+\f0\b0 \
+Answer: \
+\
+
+\f1\b There are several ways to manage state in Flutter:\
+
+\f0\b0 \
+
+\f1\b setState():
+\f0\b0  The simplest way, but only suitable for small apps or individual widgets.\
+
+\f1\b InheritedWidget:
+\f0\b0  Provides state information to child widgets in the widget tree.\
+
+\f1\b Provider: 
+\f0\b0 A popular state management solution that leverages InheritedWidgets but is more flexible and scalable.\
+
+\f1\b Bloc/Cubit:
+\f0\b0   A pattern for managing state using streams, particularly useful for more complex state management scenarios.\
+
+\f1\b River-pod:
+\f0\b0  A modern alternative to Provider, offering more powerful and type-safe state management.\
+\
+5. What is the difference between 
+\f1\b `Navigator.push` and `Navigator.pushReplacement`
+\f0\b0 ?\
+\
+
+\f1\b Answer:\
+\
+Navigator.push
+\f0\b0 : Adds a new route on top of the existing stack of routes.\
+\
+
+\f1\b Navigator.pushReplacement:
+\f0\b0  Replaces the current route with a new one, removing the old route from the stack.\
+\
+
+\f1\b 6. How does the `Flutter` `build()` method work?\
+
+\f0\b0 \
+
+\f1\b Answer:
+\f0\b0 \
+\
+The 
+\f1\b `build()` 
+\f0\b0 method is responsible for creating a widget tree that represents the 
+\f1\b UI
+\f0\b0 .\
+ It is called every time the widget needs to be 
+\f1\b rendered or re-rendered
+\f0\b0 , such as after a state change.\
+ Flutter's rendering engine takes this widget tree and converts it into a corresponding 
+\f1\b UI
+\f0\b0  on the screen.\
+\
+7. What is an 
+\f1\b `InheritedWidget`
+\f0\b0  in Flutter?\
+\
+
+\f1\b Answer:\
+
+\f0\b0 \
+
+\f1\b `InheritedWidget`
+\f0\b0  is a widget that passes data down the widget tree, allowing child widgets to access the shared 
+\f1\b data efficiently
+\f0\b0 .\
+ It\'92s typically used for scenarios where you need to pass information to a large part of the widget tree without having to manually pass it through constructors.\
+\
+8. How do you handle 
+\f1\b HTTP 
+\f0\b0 requests in Flutter?\
+\
+
+\f1\b Answer:\
+
+\f0\b0 \
+You can handle HTTP requests using the 
+\f1\b `http` package or `dio`
+\f0\b0  for more advanced use cases:\
+\
+
+\f1\b http:
+\f0\b0  A simple and lightweight package for making 
+\f1\b GET, POST, PUT, DELETE
+\f0\b0  requests.\
+\
+
+\f1\b dio:
+\f0\b0  A more powerful package that supports features like interceptors, form data, and cancellation of requests.\
+\
+
+\f1\b Example using `http`:\
+```dart\
+import 'package:http/http.dart' as http;\
+\
+Future<http.Response> fetchData() \{\
+  return http.get(Uri.parse('https://api.example.com/data'));\
+\}\
+
+\f0\b0 ```\
+\
+
+\f1\b 9. What are keys in Flutter, and when do you use them?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+Keys are used to preserve the state of widgets when they are reordered in the widget tree. \
+\
+They are especially important when dealing with lists or grids where the order of items may change. \
+\
+
+\f1\b There are three types of keys:\
+
+\f0\b0 \
+
+\f1\b GlobalKey:
+\f0\b0  Used for widgets that need to maintain state across different parts of the widget tree.\
+\
+
+\f1\b UniqueKey:
+\f0\b0  Used when you need to ensure each widget instance is unique.\
+\
+
+\f1\b ValueKey:
+\f0\b0   Used to differentiate widgets with the same parent based on a specific value.\
+\
+
+\f1\b 10. How do you implement navigation in Flutter?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+Flutter uses the 
+\f1\b `Navigator`
+\f0\b0  widget to manage navigation:\
+\
+
+\f1\b Push a new route:`Navigator.push(context, MaterialPageRoute(builder: (context) => NewScreen()));`
+\f0\b0 \
+\
+
+\f1\b Pop the current route:
+\f0\b0  
+\f1\b `Navigator.pop(context);`
+\f0\b0 \
+\
+
+\f1\b Named routes:
+\f0\b0  Define routes in 
+\f1\b `MaterialApp`
+\f0\b0  and use 
+\f1\b `Navigator.pushNamed(context, '/routeName');`
+\f0\b0  too navigate.\
+\
+
+\f1\b 11. Explain the use of `FutureBuilder` and `StreamBuilder`.\
+
+\f0\b0 \
+Answer:\
+\
+
+\f1\b FutureBuilder:
+\f0\b0  Used to build a widget based on the latest snapshot of interaction with a 
+\f1\b `Future
+\f0\b0 `. \
+\
+It is commonly used for 
+\f1\b asynchronous data fetching
+\f0\b0 .\
+\
+
+\f1\b StreamBuilder:
+\f0\b0  Similar to `FutureBuilder`, but it works with `
+\f1\b Stream
+\f0\b0 ` instead of `
+\f1\b Future
+\f0\b0 `. \
+\
+It\'92s used for continuous 
+\f1\b data streams, like real-time updates
+\f0\b0  from a server.\
+\
+
+\f1\b 12. How do you optimise the performance of a Flutter application?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+
+\f1\b Minimise Rebuilds:
+\f0\b0  Use 
+\f1\b `const`
+\f0\b0  constructors, and avoid unnecessary widget rebuilds by separating widgets into smaller ones.\
+\
+
+\f1\b Efficient List Rendering: 
+\f0\b0 Use 
+\f1\b `ListView.builder`
+\f0\b0  for large or infinite lists.\
+\
+
+\f1\b Reduce Overdraw: 
+\f0\b0 Avoid stacking too many widgets that might cause multiple paints.\
+\
+Use `
+\f1\b RepaintBoundary`
+\f0\b0 : For widgets that should be redrawn less frequently, place them inside a `RepaintBoundary` to reduce unnecessary painting.\
+\
+
+\f1\b 13. What is the role of `pubspec.yaml` in a Flutter project?\
+
+\f0\b0 \
+
+\f1\b Answer:
+\f0\b0   \
+\
+
+\f1\b `pubspec.yaml
+\f0\b0 ` is the configuration file for a Flutter project. It defines the project\'92s metadata 
+\f1\b (name, version),
+\f0\b0  dependencies, assets 
+\f1\b (like images or fonts
+\f0\b0 ), and other settings like plugins.\
+\
+
+\f1\b 14. How does Flutter handle the different screen sizes?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+
+\f1\b Flutter provides several tools to handle different screen sizes:\
+
+\f0\b0 \
+
+\f1\b MediaQuery:
+\f0\b0  Used to get the size and orientation of the screen and adjust the UI accordingly.\
+\
+
+\f1\b LayoutBuilder
+\f0\b0 : Builds a widget tree that depends on the parent widget's constraints.\
+\
+
+\f1\b Flexible and Expanded:
+\f0\b0  Widgets that help in creating responsive layouts by distributing available space among child widgets.\
+\
+
+\f1\b 15. How can you persist data in Flutter?\
+
+\f0\b0 \
+
+\f1\b Answer:\
+
+\f0\b0 \
+
+\f1\b Data persistence in Flutter can be achieved through:\
+
+\f0\b0 \
+
+\f1\b SharedPreferences:
+\f0\b0  For simple key-value storage.\
+
+\f1\b SQLite: 
+\f0\b0 For structured relational data.\
+
+\f1\b Hive:
+\f0\b0  For fast and lightweight NoSQL storage.\
+
+\f1\b Firebase:
+\f0\b0  For cloud-based data storage and real-time database capabilities.\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs22 \cf2 \CocoaLigature0 class HomeScreen extends StatelessWidget \{\
+  @override\
+  Widget build(BuildContext context) \{\
+    return Scaffold(\
+      appBar: AppBar(\
+        title: Text('Madras360 Gadgets'),\
+      ),\
+      body: ProductList(),\
+    );\
+  \}\
+\}\
+\
+class ProductList extends StatelessWidget \{\
+  final List<Map<String, dynamic>> products = [\
+    \{\
+      "name": "Smartphone",\
+      "price": 799,\
+      "image": "https://via.placeholder.com/150",\
+    \},\
+    \{\
+      "name": "Tablet",\
+      "price": 599,\
+      "image": "https://via.placeholder.com/150",\
+    \},\
+    \{\
+      "name": "Smartwatch",\
+      "price": 199,\
+      "image": "https://via.placeholder.com/150",\
+    \},\
+  ];\
+\
+  @override\
+  Widget build(BuildContext context) \{\
+    return ListView.builder(\
+      itemCount: products.length,\
+      itemBuilder: (context, index) \{\
+        final product = products[index];\
+        return Card(\
+          child: ListTile(\
+            leading: Image.network(product['image']),\
+            title: Text(product['name']),\
+            subtitle: Text("\\$$\{product['price']\}"),\
+            trailing: ElevatedButton(\
+              onPressed: () \{\
+                // Add to cart functionality\
+              \},\
+              child: Text("Add to Cart"),\
+            ),\
+          ),\
+        );\
+      \},\
+    );\
+  \}\
+\}\
+\
+zsh: par
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+}
